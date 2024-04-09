@@ -2,7 +2,36 @@
 
 ## Usage
 
+```javascript
+    const fluxicons = require('@codegasms/fluxicons');
+
+    const message = 'Hello World';
+    const size = 512;
+
+    // Method 1
+    var fluxiconData = fluxicons.fluxicon(message, size, 'data');
+    var fluxiconBuffer = fluxicons.fluxicon(fluxiconData);
+
+    fs.writeFileSync(__dirname + 'fluxicons_hello_world.png', fluxiconBuffer);
+
+    // Method 2
+    var fluxiconBuffer = fluxicons.fluxicon(message, size, 'image');
+    fs.writeFileSync(__dirname + 'fluxicons_hello_world.png', fluxiconBuffer);
+```
+
 ## What Is A Fluxicon?
+
+```Fluxicons```, our Identicons, are simple “pixel” sprites that are generated using a hash (using ```@codegasms/sha256```) of (anything).
+
+The algorithm walks through the hash and generates a tom loads of properties such as:
+
+1. The shape defining the Fluxicon grid
+2. Color of the Fluxicon
+3. Type of the shapes
+4. Rotation of the shapes
+5. Inversion of the shapes
+
+These shapes are then stitched together to ```create a buffer``` which defines the Fluxicon. Due to a variety in the properties, each generated Fluxicon is ensured to be ```unique```.
 
 ## Generating A Fluxicon
 
@@ -10,13 +39,13 @@
 
 The ```Grid``` is indexed as follows:
 
-> ```shell
->    0  1  2  3  4
->    5  6  7  8  9
->   10 11 12 13 14
->   15 16 17 18 19
->   20 21 22 23 24
-> ```
+```shell
+   0  1  2  3  4
+   5  6  7  8  9
+  10 11 12 13 14
+  15 16 17 18 19
+  20 21 22 23 24
+```
 
 We need to create some shapes using combination of indices.
 
@@ -161,8 +190,6 @@ Now that we have the ```Data``` and the ```Shapes``` defined, we can generate th
 
 The colors are generated based on the ```RGB``` values of the ```Data``` and the ```Shapes``` are generated based on the properties of the ```Data```.
 
-> The generated Fluxicon is returned as a ```Buffer``` object, so that it can be converted into any desirable file format.
-
 ```javascript
 function generateFluxicon(data) {
     var canvas = Canvas.createCanvas(data.size, data.size);
@@ -195,3 +222,5 @@ function generateFluxicon(data) {
     return canvas.toBuffer();
 }
 ```
+
+> The generated Fluxicon is returned as a ```Buffer``` object, so that it can be converted into any desirable file format.
