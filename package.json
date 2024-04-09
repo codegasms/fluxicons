@@ -1,0 +1,27 @@
+{
+  "name": "@codegasms/fluxicons",
+  "version": "1.0.0",
+  "description": "Generate Identicons",
+  "main": "fluxicon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codegasms/fluxicons.git"
+  },
+  "keywords": [
+    "identicons",
+    "gravatars",
+    "avatars"
+  ],
+  "author": "SahooBishwajeet [biswa.2004.bdk@gmail.com]",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codegasms/fluxicons/issues"
+  },
+  "homepage": "https://github.com/codegasms/fluxicons#readme",
+  "dependencies": {
+    "@codegasms/sha256": "^1.1.0"
+  }
+}
