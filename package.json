@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/codegasms/fluxicons#readme",
   "dependencies": {
-    "@codegasms/sha256": "^1.1.0"
+    "@codegasms/sha256": "^1.1.0",
+    "canvas": "^2.11.2"
   }
 }
