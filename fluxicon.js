@@ -138,6 +138,10 @@ function generateFluxicon(data) {
 }
 
 exports.fluxicon = function (str, size, operation) {
+    if (typeof str === 'object') {
+        return generateFluxicon(generateFluxiconData(str.str, str.size));
+    }
+
     var data = generateFluxiconData(str, size);
     var buffer = generateFluxicon(data);
 
