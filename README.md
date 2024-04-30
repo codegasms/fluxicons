@@ -2,21 +2,21 @@
 
 ## Usage
 
-```javascript
-    const fluxicons = require('@codegasms/fluxicons');
+```typescript
+    import fluxicons from '@codegasms/fluxicons';
 
     const message = 'Hello World';
     const size = 512;
 
     // Method 1
-    var fluxiconData = fluxicons.fluxicon(message, size, 'data');
-    var fluxiconBuffer = fluxicons.fluxicon(fluxiconData);
+    const fluxiconData: Buffer = fluxicons.fluxicon(message, size, 'data');
+    const fluxiconBuffer: Buffer = fluxicons.fluxicon(fluxiconData);
 
-    fs.writeFileSync(__dirname + 'fluxicons_hello_world.png', fluxiconBuffer);
+    fs.writeFileSync('fluxicons_hello_world.png', fluxiconBuffer);
 
     // Method 2
-    var fluxiconBuffer = fluxicons.fluxicon(message, size, 'image');
-    fs.writeFileSync(__dirname + 'fluxicons_hello_world.png', fluxiconBuffer);
+    const fluxiconBuffer: Buffer = fluxicons.fluxicon(message, size, 'image');
+    fs.writeFileSync('fluxicons_hello_world.png', fluxiconBuffer);
 ```
 
 ## What Is A Fluxicon?
