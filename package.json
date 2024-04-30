@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Generate Identicons",
   "main": "fluxicon.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +25,9 @@
   "dependencies": {
     "@codegasms/sha256": "^1.1.0",
     "canvas": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tsx": "^4.7.3"
   }
 }
